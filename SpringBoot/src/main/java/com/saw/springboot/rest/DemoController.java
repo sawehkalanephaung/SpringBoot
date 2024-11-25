@@ -10,4 +10,10 @@ public class DemoController {
     public String sayHello() {
         return "Hello World";
     }
+
+    // expose a new endpoint for "workout"
+    @GetMapping("/workout")
+    public String workout() {
+        return "Run a hard 5k!";
+    }
 }
