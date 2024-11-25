@@ -3,9 +3,7 @@ package com.saw.springboot;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication(
-        scanBasePackages={"com.saw.springboot",
-                            "com.saw.util"})
+@SpringBootApplication
 public class Application {
 
     public static void main(String[] args) {

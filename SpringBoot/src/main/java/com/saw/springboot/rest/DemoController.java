@@ -1,6 +1,6 @@
 package com.saw.springboot.rest;
 
-import util.Coach;
+import com.saw.springboot.common.Coach;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
