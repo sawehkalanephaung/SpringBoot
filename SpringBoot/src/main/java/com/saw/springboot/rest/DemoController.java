@@ -16,4 +16,10 @@ public class DemoController {
     public String workout() {
         return "Run a hard 5k!";
     }
+
+    // expose a new endpoint for "fortune"
+    @GetMapping("/fortune")
+    public String fortune() {
+        return "Today is your very lucky day!";
+    }
 }
