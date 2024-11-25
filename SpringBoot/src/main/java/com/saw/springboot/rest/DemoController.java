@@ -21,7 +21,7 @@ public class DemoController {
     // don't forget to add @Autowired
     // what is @autowired? it is used to inject the dependency automatically
     @Autowired
-    public  DemoController( @Qualifier("boxerCoach") Coach myCoach) {
+    public  DemoController(Coach myCoach) {
         this.myCoach = myCoach;
     }
 

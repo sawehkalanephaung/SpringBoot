@@ -1,8 +1,10 @@
 package com.saw.springboot.common;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
+@Primary
 public class BoxerCoach implements Coach
 {
     @Override
