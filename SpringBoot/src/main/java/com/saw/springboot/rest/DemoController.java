@@ -14,22 +14,30 @@ public class DemoController {
         return "Hello World";
     }
 
-   // create setter  for dependency injection
     private final  Coach myCoach;
+    private final Coach anotherCoach;
 
     // use default constructor
     // don't forget to add @Autowired
     // what is @autowired? it is used to inject the dependency automatically
     @Autowired
-    public  DemoController(@Qualifier("boxerCoach") Coach theCoach) {
-        // printline
+    public  DemoController(@Qualifier("boxerCoach") Coach theCoach,
+                           @Qualifier("boxerCoach") Coach theAnotherCoach) {
+        // Printline
         System.out.println("In constructor: " + getClass().getSimpleName());
 
         myCoach = theCoach;
+        anotherCoach = theAnotherCoach;
     }
 
     @GetMapping("/dailyworkout")
     public String getDailyWorkout() {
         return myCoach.getDailyWorkout();
+    }
+
+
+    @GetMapping("/check")
+    public String check(){
+        return "Comparing beans: myCoach == anotherCoach, " + (myCoach == anotherCoach);
     }
 }

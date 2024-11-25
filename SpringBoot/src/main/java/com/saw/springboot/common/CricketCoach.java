@@ -5,8 +5,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 
-// you cannot see CreditCardCoach in the terminal because it is lazy loaded
-@Lazy
 public class CricketCoach implements Coach {
 
     // add constructor
