@@ -1,4 +1,4 @@
-package com.saw.springboot;
+package util;
 
 public interface Coach {
     String getDailyWorkout();

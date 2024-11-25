@@ -1,6 +1,6 @@
 package com.saw.springboot.rest;
 
-import com.saw.springboot.Coach;
+import util.Coach;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,7 +13,7 @@ public class DemoController {
     }
 
    // create constructor for dependency injection
-    private final Coach myCoach;
+    private  Coach myCoach;
     public DemoController(Coach theCoach) {
         myCoach = theCoach;
     }
