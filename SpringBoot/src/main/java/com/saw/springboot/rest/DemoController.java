@@ -15,14 +15,17 @@ public class DemoController {
     }
 
    // create setter  for dependency injection
-    private Coach myCoach;
+    private final  Coach myCoach;
 
     // use default constructor
     // don't forget to add @Autowired
     // what is @autowired? it is used to inject the dependency automatically
     @Autowired
-    public  DemoController(Coach myCoach) {
-        this.myCoach = myCoach;
+    public  DemoController(@Qualifier("boxerCoach") Coach theCoach) {
+        // printline
+        System.out.println("In constructor: " + getClass().getSimpleName());
+
+        myCoach = theCoach;
     }
 
     @GetMapping("/dailyworkout")
