@@ -15,7 +15,6 @@ public class DemoController {
     }
 
     private final  Coach myCoach;
-    private final Coach anotherCoach;
 
     // use default constructor
     // don't forget to add @Autowired
@@ -23,13 +22,10 @@ public class DemoController {
 
     // spring beans
     @Autowired
-    public  DemoController(@Qualifier("boxerCoach") Coach theCoach,
-                           @Qualifier("boxerCoach") Coach theAnotherCoach) {
+    public  DemoController(@Qualifier("swimCoach") Coach theCoach){
         // Printline
         System.out.println("In constructor: " + getClass().getSimpleName());
-
         myCoach = theCoach;
-        anotherCoach = theAnotherCoach;
     }
 
     @GetMapping("/dailyworkout")
@@ -37,9 +33,4 @@ public class DemoController {
         return myCoach.getDailyWorkout();
     }
 
-    // check beans scope
-    @GetMapping("/check")
-    public String check(){
-        return "Comparing beans: myCoach == anotherCoach, " + (myCoach == anotherCoach);
-    }
 }
