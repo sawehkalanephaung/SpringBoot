@@ -20,6 +20,8 @@ public class DemoController {
     // use default constructor
     // don't forget to add @Autowired
     // what is @autowired? it is used to inject the dependency automatically
+
+    // spring beans
     @Autowired
     public  DemoController(@Qualifier("boxerCoach") Coach theCoach,
                            @Qualifier("boxerCoach") Coach theAnotherCoach) {
@@ -35,7 +37,7 @@ public class DemoController {
         return myCoach.getDailyWorkout();
     }
 
-
+    // check beans scope
     @GetMapping("/check")
     public String check(){
         return "Comparing beans: myCoach == anotherCoach, " + (myCoach == anotherCoach);

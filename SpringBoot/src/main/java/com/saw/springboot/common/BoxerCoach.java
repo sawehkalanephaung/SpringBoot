@@ -1,11 +1,10 @@
 package com.saw.springboot.common;
 
-import org.springframework.beans.factory.config.ConfigurableBeanFactory;
-import org.springframework.context.annotation.Scope;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.springframework.stereotype.Component;
 
 @Component
-@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class BoxerCoach implements Coach
 {
 
@@ -13,6 +12,22 @@ public class BoxerCoach implements Coach
     public BoxerCoach() {
         System.out.println("In constructor: " + getClass().getSimpleName());
     }
+
+    // define our destroy method
+
+    // post destroy method, it will be called before the bean is destroyed
+    @PostConstruct
+    public void doMyCleanupStuff() {
+        System.out.println("In doMyStartupStuff(): " + getClass().getSimpleName());
+    }
+
+    // pre destroy method , it will be called after the bean is destroyed
+    @PreDestroy
+    public void doMyStartupStuff() {
+        System.out.println("In doMyCleanupStuff(): " + getClass().getSimpleName());
+    }
+
+
 
     @Override
     public String getDailyWorkout() {
